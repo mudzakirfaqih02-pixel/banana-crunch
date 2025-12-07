@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog Produk – Banana Crunch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{background:black;}</style>
+</head>
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-lg z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="banana.png" class="h-10">
+      <span class="text-yellow-400 text-xl font-bold">Banana Crunch</span>
+    </a>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-yellow-400">Beranda</a></li>
+      <li><a href="produk.html" class="text-yellow-400 font-bold">Katalog</a></li>
+      <li><a href="kontak.html" class="hover:text-yellow-400">Kontak</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="pt-28 text-center pb-6">
+  <h1 class="text-4xl font-extrabold text-yellow-400">Katalog Produk</h1>
+  <p class="text-white/80 mt-2">Pilih rasa favoritmu!</p>
+</section>
+
+<!-- PRODUK GRID -->
+<div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 pb-24">
+
+  <!-- Cokelat -->
+  <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-yellow-500/20 hover:border-yellow-400 hover:scale-105 duration-300 text-center">
+    <img src="coklat.jpg" class="h-52 w-full object-cover rounded-xl shadow-lg">
+    <h3 class="text-2xl font-extrabold text-yellow-400 mt-4">Cokelat</h3>
+    <p class="text-white/80 text-sm mt-2">Manis, legit, bikin nagih!</p>
+    <p class="text-yellow-300 font-bold text-lg mt-3">Rp 13.000</p>
+    <a href="https://wa.me/6285189317512?text=Halo!%20Saya%20mau%20pesan%20Banana%20Crunch%20Cokelat"
+      class="mt-4 inline-block px-6 py-2 bg-yellow-400 text-black rounded-xl font-bold hover:bg-yellow-300 duration-200">Pesan</a>
+  </div>
+
+  <!-- Taro -->
+  <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-yellow-500/20 hover:border-yellow-400 hover:scale-105 duration-300 text-center">
+    <img src="taro.jpg" class="h-52 w-full object-cover rounded-xl shadow-lg">
+    <h3 class="text-2xl font-extrabold text-yellow-400 mt-4">Taro</h3>
+    <p class="text-white/80 text-sm mt-2">Wangi unik, lembut & favorit anak muda!</p>
+    <p class="text-yellow-300 font-bold text-lg mt-3">Rp 13.000</p>
+    <a href="https://wa.me/6285189317512?text=Halo!%20Saya%20mau%20pesan%20Banana%20Crunch%20Taro"
+      class="mt-4 inline-block px-6 py-2 bg-yellow-400 text-black rounded-xl font-bold hover:bg-yellow-300 duration-200">Pesan</a>
+  </div>
+
+  <!-- Matcha -->
+  <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-5 shadow-xl border border-yellow-500/20 hover:border-yellow-400 hover:scale-105 duration-300 text-center">
+    <img src="macha.jpg" class="h-52 w-full object-cover rounded-xl shadow-lg">
+    <h3 class="text-2xl font-extrabold text-yellow-400 mt-4">Matcha</h3>
+    <p class="text-white/80 text-sm mt-2">Premium quality green tea!</p>
+    <p class="text-yellow-300 font-bold text-lg mt-3">Rp 15.000</p>
+    <a href="https://wa.me/6285189317512?text=Halo!%20Saya%20mau%20pesan%20Banana%20Crunch%20Matcha"
+      class="mt-4 inline-block px-6 py-2 bg-yellow-400 text-black rounded-xl font-bold hover:bg-yellow-300 duration-200">Pesan</a>
+  </div>
+
+</div>
+
+
+</body>
+</html>

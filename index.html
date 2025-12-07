@@ -1,0 +1,325 @@
+<!--
+Project: Banana Crunch - Full Tailwind (CDN)
+Files included below as separate sections. Copy each section into separate files in /BananaCrunch folder:
+- index.html
+- produk.html
+- kontak.html
+- /assets/img/ (add your product images here, filenames used: cokelat.jpg, keju.jpg, balado.jpg, hero.jpg)
+
+Design chosen: Bold Dark Premium (Hitam + Kuning)
+Tailwind via CDN is used for quick setup.
+-->
+
+<!-- FILE: index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Banana Crunch — Enaknya Bikin Ketagihan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* tiny tweaks for slider */
+    .slide { transition: opacity .6s ease; }
+  </style>
+</head>
+<body class="bg-black text-white antialiased">
+  <!-- NAVBAR -->
+  <header class="fixed w-full z-40 bg-black/80 backdrop-blur-sm border-b border-yellow-400/20">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+  <img src="banana.png" alt="Banana Crunch" class="h-10">
+  <h1 class="text-yellow-400 text-xl font-extrabold">Banana Crunch</h1>
+</a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-yellow-400">Beranda</a>
+        <a href="produk.html" class="hover:text-yellow-400">Produk</a>
+        <a href="kontak.html" class="hover:text-yellow-400">Kontak</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="navToggle" class="p-2 rounded bg-yellow-400 text-black font-bold">Menu</button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden bg-black/95 border-t border-yellow-400/10">
+      <div class="flex flex-col px-6 py-4">
+        <a href="index.html" class="py-2 border-b border-yellow-400/5">Beranda</a>
+        <a href="produk.html" class="py-2 border-b border-yellow-400/5">Produk</a>
+        <a href="kontak.html" class="py-2">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <!-- HERO SLIDER (3 slides) -->
+    <section class="relative overflow-hidden">
+      <div class="relative h-[60vh] md:h-[70vh]">
+        <div id="slides" class="h-full">
+
+  <!-- Slide 1 -->
+  <div class="slide absolute inset-0 bg-center bg-cover opacity-100"
+    style="background-image:url('assets/img/hero.jpg');">
+    <div class="bg-black/50 h-full flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-5xl md:text-7xl font-extrabold text-yellow-400 drop-shadow-lg">Banana Crunch</h2>
+      <p class="mt-4 text-lg md:text-xl text-white/90">Keripik pisang aneka rasa — gurih & renyah bikin nagih.</p>
+      <div class="mt-6 flex gap-4">
+        <a href="produk.html" class="px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg">Lihat Katalog</a>
+        <a href="https://wa.me/6285189317512?text=Halo%20Saya%20mau%20pesan%20Banana%20Crunch"
+          class="px-6 py-3 border border-yellow-400 text-yellow-400 font-semibold rounded-lg">Pesan Sekarang</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide absolute inset-0 bg-center bg-cover opacity-0"
+    style="background-image:url('assets/img/cokelat.jpg');">
+    <div class="bg-black/50 h-full flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-5xl font-extrabold text-yellow-400">Rasa Cokelat</h2>
+      <p class="mt-4 text-lg text-white/90">Manis & legit, favorit semua usia.</p>
+      <a href="produk.html#cokelat"
+        class="mt-6 px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg">Pesan Rasa Cokelat</a>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide absolute inset-0 bg-center bg-cover opacity-0"
+    style="background-image:url('assets/img/taro.jpg');">
+    <div class="bg-black/50 h-full flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-5xl font-extrabold text-yellow-400">Rasa Taro</h2>
+      <p class="mt-4 text-lg text-white/90">Lembut, gurih, bikin susah berhenti ngemil.</p>
+      <a href="produk.html#taro"
+        class="mt-6 px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg">Pesan Rasa Taro</a>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide absolute inset-0 bg-center bg-cover opacity-0"
+    style="background-image:url('assets/img/matcha.jpg');">
+    <div class="bg-black/50 h-full flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-5xl font-extrabold text-yellow-400">Rasa Matcha</h2>
+      <p class="mt-4 text-lg text-white/90">Matcha premium — creamy dan wangi!</p>
+      <a href="produk.html#matcha"
+        class="mt-6 px-6 py-3 bg-yellow-400 text-black font-bold rounded-lg">Pesan Rasa Matcha</a>
+    </div>
+  </div>
+
+</div>
+
+        <!-- Slider controls -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+          <button class="w-3 h-3 rounded-full bg-yellow-400/70 slide-dot" data-index="0"></button>
+          <button class="w-3 h-3 rounded-full bg-white/30 slide-dot" data-index="1"></button>
+          <button class="w-3 h-3 rounded-full bg-white/30 slide-dot" data-index="2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / USP -->
+    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-gray-900/50 p-6 rounded-xl text-center">
+        <h3 class="text-yellow-400 font-bold text-xl">Resep Rumahan</h3>
+        <p class="mt-2 text-sm text-white/80">Dibuat dari pisang pilihan & tanpa bahan pengawet.</p>
+      </div>
+      <div class="bg-gray-900/50 p-6 rounded-xl text-center">
+        <h3 class="text-yellow-400 font-bold text-xl">Aneka Rasa</h3>
+        <p class="mt-2 text-sm text-white/80">Cokelat, Taro, Matcha — siap memuaskan lidahmu.</p>
+      </div>
+      <div class="bg-gray-900/50 p-6 rounded-xl text-center">
+        <h3 class="text-yellow-400 font-bold text-xl">Kirim Cepat</h3>
+        <p class="mt-2 text-sm text-white/80">Packing rapi, pengiriman ke seluruh Indonesia.</p>
+      </div>
+    </section>
+
+    <!-- SHORT CATALOG PREVIEW -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-3xl font-extrabold text-yellow-400">Katalog Populer</h3>
+        <a href="produk.html" class="text-sm text-white/80 underline">Lihat semua produk</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-gray-900/40 rounded-xl p-4">
+          <img src="coklat.jpg" alt="Cokelat" class="w-full h-48 object-cover rounded-lg mb-3">
+          <h4 class="text-yellow-400 font-bold">Banana Crunch - Cokelat</h4>
+          <p class="text-white/80 mt-1">Rp 10.000 / pack</p>
+          <a href="https://wa.me/6285189317512?text=Saya%20mau%20pesan%20Banana%20Crunch%20Cokelat" class="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black rounded-md font-semibold">Pesan</a>
+        </div>
+        <!-- Card 2 -->
+        <div class="bg-gray-900/40 rounded-xl p-4">
+          <img src="taro.jpg" alt="Keju" class="w-full h-48 object-cover rounded-lg mb-3">
+          <h4 class="text-yellow-400 font-bold">Banana Crunch - Keju</h4>
+          <p class="text-white/80 mt-1">Rp 10.000 / pack</p>
+          <a href="https://wa.me/6285189317512?text=Saya%20mau%20pesan%20Banana%20Crunch%20Keju" class="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black rounded-md font-semibold">Pesan</a>
+        </div>
+        <!-- Card 3 -->
+        <div class="bg-gray-900/40 rounded-xl p-4">
+          <img src="macha.jpg" alt="Balado" class="w-full h-48 object-cover rounded-lg mb-3">
+          <h4 class="text-yellow-400 font-bold">Banana Crunch - Balado</h4>
+          <p class="text-white/80 mt-1">Rp 10.000 / pack</p>
+          <a href="https://wa.me/6285189317512?text=Saya%20mau%20pesan%20Banana%20Crunch%20Balado" class="inline-block mt-3 px-4 py-2 bg-yellow-400 text-black rounded-md font-semibold">Pesan</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING SOCIALS -->
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/6285189317512" class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center shadow-lg" title="WhatsApp">WA</a>
+    <a href="https://instagram.com/banana_crunch1" class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-400 flex items-center justify-center shadow-lg" title="Instagram">IG</a>
+    <a href="https://tiktok.com/@banana_crunch1" class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-lg" title="TikTok">TT</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-yellow-400/10 bg-black py-6">
+    <div class="max-w-6xl mx-auto px-6 text-center text-white/80">© 2025 Banana Crunch • Dibuat dengan cinta</div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    document.getElementById('navToggle').addEventListener('click', function(){
+      const m = document.getElementById('mobileMenu');
+      m.classList.toggle('hidden');
+    });
+
+    // Simple slider logic
+    (function(){
+      const slides = Array.from(document.querySelectorAll('#slides .slide'));
+      const dots = Array.from(document.querySelectorAll('.slide-dot'));
+      let idx = 0;
+      function show(i){
+        slides.forEach((s,si)=>{ s.style.opacity = si===i? '1':'0'; });
+        dots.forEach((d,di)=> d.classList.toggle('bg-yellow-400/70', di===i));
+      }
+      dots.forEach(d=> d.addEventListener('click', ()=> { idx = Number(d.dataset.index); show(idx); }));
+      setInterval(()=>{ idx = (idx+1) % slides.length; show(idx); }, 5000);
+    })();
+  </script>
+</body>
+</html>
+
+
+<!-- FILE: produk.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produk - Banana Crunch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="fixed w-full z-40 bg-black/80 backdrop-blur-sm border-b border-yellow-400/20">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-extrabold">BC</div>
+        <h1 class="text-yellow-400 text-xl font-extrabold">Banana Crunch</h1>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-yellow-400">Beranda</a>
+        <a href="produk.html" class="hover:text-yellow-400 font-bold">Produk</a>
+        <a href="kontak.html" class="hover:text-yellow-400">Kontak</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="navToggle2" class="p-2 rounded bg-yellow-400 text-black font-bold">Menu</button>
+      </div>
+    </div>
+    <div id="mobileMenu2" class="hidden bg-black/95 border-t border-yellow-400/10">
+      <div class="flex flex-col px-6 py-4">
+        <a href="index.html" class="py-2 border-b border-yellow-400/5">Beranda</a>
+        <a href="produk.html" class="py-2 border-b border-yellow-400/5">Produk</a>
+        <a href="kontak.html" class="py-2">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+      <!-- Add more products as needed -->
+    </div>
+  </main>
+
+  <!-- FLOATING SOCIALS -->
+  <div class="fixed right-6 bottom-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/6285189317512" class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center shadow-lg" title="WhatsApp">WA</a>
+    <a href="https://instagram.com/banana_crunch1" class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-400 flex items-center justify-center shadow-lg" title="Instagram">IG</a>
+    <a href="https://tiktok.com/@banana_crunch1" class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-lg" title="TikTok">TT</a>
+  </div>
+
+  <script>
+    document.getElementById('navToggle2').addEventListener('click', function(){
+      const m = document.getElementById('mobileMenu2');
+      m.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- FILE: kontak.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kontak - Banana Crunch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+  <header class="fixed w-full z-40 bg-black/80 backdrop-blur-sm border-b border-yellow-400/20">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-black font-extrabold">BC</div>
+        <h1 class="text-yellow-400 text-xl font-extrabold">Banana Crunch</h1>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="index.html" class="hover:text-yellow-400">Beranda</a>
+        <a href="produk.html" class="hover:text-yellow-400">Produk</a>
+        <a href="kontak.html" class="hover:text-yellow-400 font-bold">Kontak</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="navToggle3" class="p-2 rounded bg-yellow-400 text-black font-bold">Menu</button>
+      </div>
+    </div>
+    <div id="mobileMenu3" class="hidden bg-black/95 border-t border-yellow-400/10">
+      <div class="flex flex-col px-6 py-4">
+        <a href="index.html" class="py-2 border-b border-yellow-400/5">Beranda</a>
+        <a href="produk.html" class="py-2 border-b border-yellow-400/5">Produk</a>
+        <a href="kontak.html" class="py-2">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24 max-w-3xl mx-auto px-6 py-12 text-center">
+    <h2 class="text-3xl font-extrabold text-yellow-400 mb-4">Hubungi Banana Crunch</h2>
+    <p class="text-white/80 mb-6">Untuk pemesanan, kerjasama, atau pertanyaan.</p>
+
+    <div class="space-y-4">
+      <a href="https://wa.me/6285189317512" class="block bg-yellow-400 text-black py-3 rounded-lg font-bold">WhatsApp: 085189317512</a>
+      <a href="https://instagram.com/banana_crunch1" class="block bg-yellow-400 text-black py-3 rounded-lg font-bold">Instagram: @banana_crunch1</a>
+      <a href="https://tiktok.com/@banana_crunch1" class="block bg-yellow-400 text-black py-3 rounded-lg font-bold">TikTok: @banana_crunch1</a>
+    </div>
+
+    <div class="mt-10 bg-gray-900/30 p-6 rounded-xl">
+      <form action="#" class="space-y-4 text-left">
+        <label class="block text-sm font-semibold">Nama</label>
+        <input class="w-full p-3 rounded bg-gray-900 border border-gray-700" placeholder="Nama Anda">
+        <label class="block text-sm font-semibold">Email</label>
+        <input class="w-full p-3 rounded bg-gray-900 border border-gray-700" placeholder="Email Anda">
+        <label class="block text-sm font-semibold">Pesan</label>
+        <textarea class="w-full p-3 rounded bg-gray-900 border border-gray-700" rows="4" placeholder="Tulis pesan..."></textarea>
+        <button class="w-full py-3 bg-yellow-400 text-black rounded-lg font-bold">Kirim Pesan</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="mt-12 border-t border-yellow-400/10 bg-black py-6">
+    <div class="max-w-6xl mx-auto px-6 text-center text-white/80">© 2025 Banana Crunch</div>
+  </footer>
+
+  <script>
+    document.getElementById('navToggle3').addEventListener('click', function(){
+      const m = document.getElementById('mobileMenu3');
+      m.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
